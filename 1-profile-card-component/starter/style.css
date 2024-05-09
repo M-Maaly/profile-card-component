@@ -1,0 +1,232 @@
+
+/* CSS Rest */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family:'Courier New', Courier, monospace;
+}
+
+a {
+    color: inherit;
+    display: inline-block;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border: 0;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+/* End CSS Rest */
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e5e5f7;
+    background-image:  radial-gradient(#444cf7 0.75px, transparent 0.75px), radial-gradient(#444cf7 0.75px, #e5e5f7 0.75px);
+    background-size: 30px 30px;
+    background-position: 0 0,15px 15px;
+}
+
+.lights-control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    top: 2rem;
+}
+
+.lights-label {
+    width: 4.2rem;
+    height: 2.2rem;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 1.5rem;
+    transition: background-color 0.3s;
+    padding: 0.3rem 0.4rem;
+    -webkit-border-radius: 1.5rem;
+    -moz-border-radius: 1.5rem;
+    -ms-border-radius: 1.5rem;
+    -o-border-radius: 1.5rem;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -ms-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+}
+
+.lights-label::after {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    width: 1.6rem;
+    height: 1.6rem;
+    transition: 0.3s;
+    background-color: white;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.lights-input {
+    display: none;
+}
+
+.lights-input:checked + .lights-label {
+    background-color: white;
+}
+
+.lights-input:checked + .lights-label::after {
+    transform: translateX(1.8rem);
+    background-color: rgb(59, 22, 221);
+    -webkit-transform: translateX(1.8rem);
+    -moz-transform: translateX(1.8rem);
+    -ms-transform: translateX(1.8rem);
+    -o-transform: translateX(1.8rem);
+}
+.card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 365.672px;
+    min-width: 35rem;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.lights {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    z-index: 2;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+.buld-odd {
+    animation: party 0.5s infinite alternate;
+    -webkit-animation: party 0.5s infinite alternate;
+}
+
+.bulb-even {
+    animation: party 0.5s infinite alternate-reverse;
+    -webkit-animation: party 0.5s infinite alternate-reverse;
+}
+
+@keyframes party {
+    from {
+        fill: #ff0000
+    }
+    to {
+        fill: #fff500
+    }
+}
+
+.container:has(.lights-input:checked) .lights {
+    opacity: 1;
+    visibility: visible;
+}
+
+.top {
+    height: 10rem;
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 10px ), repeating-linear-gradient( #444cf755, #444cf7 );
+}
+
+.middle {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: -6rem;
+    z-index: 1;
+}
+
+.pic {
+    border-radius: 50%;
+    width: 12rem;
+    height: 12rem;
+    background-color: white;
+    border: solid 0.4rem white;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.title {
+    font-size:  2.2rem;
+    font-weight: bold;
+}
+
+.profession {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.bottom {
+    display: flex;
+    margin-top: 3rem;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 0.1rem solid #c4c4c4;
+}
+.social {
+    flex: 1;
+    padding: 1.8rem 1.5rem;
+    text-align: center;
+    width: 30%;
+}
+
+.social:nth-child(3) {
+    border-left: 0.1rem solid #c4c4c4;
+    border-right: 0.1rem solid #c4c4c4;
+}
+
+.social:nth-child(2),
+.social:nth-child(4)  {
+    display: none;
+}
+
+.icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.user-name {
+    font-size: 1.2rem;
+}
